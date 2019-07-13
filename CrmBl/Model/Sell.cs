@@ -7,24 +7,16 @@ using System.Threading.Tasks;
 namespace CrmBl.Model
 {
     /// <summary>
-    /// Класс описывающий продавца
+    /// Класс описывающий факт продажи
     /// </summary>
-    public class Seller
+    public class Sell
     {
         public int SellId { get; set; }
-        public string Name { get; set; }
-
+        public int ChekId { get; set; }
         public int ProductId { get; set; }
-
-        public virtual Check Chek { get; set; }
+        
+        public virtual Check Check { get; set; }
         public virtual Product Product { get; set; }
-
-        public virtual ICollection<Check> Cheks { get; set; }
-
-        public override string ToString()
-        {
-            return Name;
-        }
 
     }
 }

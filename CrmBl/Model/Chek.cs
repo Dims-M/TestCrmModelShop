@@ -9,7 +9,7 @@ namespace CrmBl.Model
     /// <summary>
     /// Класс описавает чек продажи
     /// </summary>
-    public class Chek
+    public class Check
     {
 
         public int CustomerId { get; set; }
@@ -30,6 +30,11 @@ namespace CrmBl.Model
         /// время создания
         /// </summary>
         public DateTime Created { get; set; }
+
+        /// <summary>
+        /// виртуальное свойство для связи между таблицами
+        /// </summary>
+        public virtual ICollection<Sell> Sells { get; set; }
 
         public override string ToString()
         {

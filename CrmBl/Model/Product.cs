@@ -17,6 +17,11 @@ namespace CrmBl.Model
         public int Count { get; set; }
 
         /// <summary>
+        /// виртуальное свойство для связи между таблицами
+        /// </summary>
+        public virtual ICollection<Seller> Sells { get; set; }
+
+        /// <summary>
         /// Переопределенный тустринг. Возразает имя товара.
         /// </summary>
         /// <returns></returns>
