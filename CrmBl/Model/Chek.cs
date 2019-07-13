@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,9 @@ namespace CrmBl.Model
     /// </summary>
     public class Check
     {
-
-        public int CustomerId { get; set; }
+        [Key]
+        public int Id { get; set; }
+        public int CustomerID { get; set; }
 
         /// <summary>
         /// Виртуальное Свойство для с внешним ключом. для связи между таблицами
@@ -38,7 +40,7 @@ namespace CrmBl.Model
 
         public override string ToString()
         {
-            return $"№{CustomerId} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
+            return $"№{CustomerID} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
         }
 
     }

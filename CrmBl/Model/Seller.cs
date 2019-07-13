@@ -11,6 +11,7 @@ namespace CrmBl.Model
     /// </summary>
     public class Seller
     {
+        public int Id { get; set; }
         public int SellId { get; set; }
         public string Name { get; set; }
 
