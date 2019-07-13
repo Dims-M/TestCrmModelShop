@@ -10,7 +10,7 @@ namespace CrmBl.Model
     /// <summary>
     /// Класс отвечающий за подлючеие у БД
     /// </summary>
-    class CrmContext : DbContext
+  public  class CrmContext : DbContext
     {
         //переопределенный конструктор
         public CrmContext(): base("CrmConntection") { }
