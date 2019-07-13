@@ -9,7 +9,7 @@ namespace CrmBl.Model
     /// <summary>
     /// Класс оописывающий товар
     /// </summary>
-    class Product
+    public class Product
     {
         public int ProductId { get; set; }
         public string Name { get; set; }
