@@ -9,10 +9,15 @@ namespace CrmBl.Model
     /// <summary>
     /// Класс описывающий продавца
     /// </summary>
-    public class Seller
+    public class Sell
     {
-        public int SellerId { get; set; }
+        public int SellId { get; set; }
         public string Name { get; set; }
+
+        public int ProductId { get; set; }
+
+        public virtual Chek Chek { get; set; }
+        public virtual Product Product { get; set; }
 
         public virtual ICollection<Chek> Cheks { get; set; }
 
