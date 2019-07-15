@@ -11,6 +11,7 @@ using CrmBl.Model;
 
 namespace CrmUi
 {
+    // https://www.youtube.com/watch?v=XHuUN1u8ZPE
     public partial class Main : Form
     {
         //Cоединение с базой данных
