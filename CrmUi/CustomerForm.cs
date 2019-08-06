@@ -30,8 +30,8 @@ namespace CrmUi
             Customer = new Customer()
             {
                 Name = textBox1.Text
-           }
-            DialogResult
+            };
+         //  DialogResult
         }
     }
 }
