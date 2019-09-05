@@ -33,5 +33,15 @@ namespace CrmUi
             };
          //  DialogResult
         }
+
+        /// <summary>
+        /// Кнопка выход
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

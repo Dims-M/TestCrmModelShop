@@ -55,8 +55,8 @@
             this.castomerToolStripMenuItem,
             this.check});
             this.сущностиToolStripMenuItem.Name = "сущностиToolStripMenuItem";
-            this.сущностиToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.сущностиToolStripMenuItem.Text = "Сущности";
+            this.сущностиToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.сущностиToolStripMenuItem.Text = "НСИ";
             // 
             // productToolStripMenuItem
             // 
@@ -77,12 +77,14 @@
             this.castomerToolStripMenuItem.Name = "castomerToolStripMenuItem";
             this.castomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.castomerToolStripMenuItem.Text = "Покупатель";
+            this.castomerToolStripMenuItem.Click += new System.EventHandler(this.CastomerToolStripMenuItem_Click);
             // 
             // check
             // 
             this.check.Name = "check";
             this.check.Size = new System.Drawing.Size(180, 22);
             this.check.Text = "Чек";
+            this.check.Click += new System.EventHandler(this.Check_Click);
             // 
             // Main
             // 
@@ -92,7 +94,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = "Наша хрень";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

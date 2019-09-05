@@ -39,7 +39,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(252, 62);
+            this.button1.Location = new System.Drawing.Point(252, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 42);
             this.button1.TabIndex = 0;
@@ -73,7 +73,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Выход";
             this.button2.UseVisualStyleBackColor = true;
-          //  this.button2.Click += new System.EventHandler(this.Button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // CustomerForm
             // 

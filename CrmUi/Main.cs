@@ -12,19 +12,20 @@ using CrmBl.Model;
 namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
+  //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
     public partial class Main : Form
     {
         //Cоединение с базой данных
         CrmContext db;  
+
         public Main()
         {
             InitializeComponent();
-            db = new CrmContext();
+            db = new CrmContext(); // иницализация бд
         }
 
         //При нажатии на кнопку товар 
-      
-        private void ProductToolStripMenuItem_Click(object sender, EventArgs e)
+        private   void ProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var cataloProduct = new Catalog<Product>(db.Products);
             cataloProduct.Show();
@@ -33,7 +34,22 @@ namespace CrmUi
         //Клин или нажатие на кнопку продавец
         private void SellerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var cataloSeller = new Catalog<Seller>(db.Sellers); //Создание подключения к бд
+            cataloSeller.Show();
+        }
 
+        //Кнопка покупатель
+        private void CastomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var catalogCustomer = new Catalog<Customer>(db.Customers); //Создание подключения к бд
+            catalogCustomer.Show();
+        }
+
+        //кнопка чек
+        private void Check_Click(object sender, EventArgs e)
+        {
+            var catalogCheck = new Catalog<Check>(db.Checks); //Создание подключения к бд
+            catalogCheck.Show();
         }
     }
 }

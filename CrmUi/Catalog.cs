@@ -15,15 +15,22 @@ namespace CrmUi
          where T : class
     {
         
+        ///
         public Catalog(DbSet<T> set)
         {
             InitializeComponent();
-            dataGridView.DataSource = set.Local.ToBindingList();
+            dataGridView.DataSource = set.Local.ToBindingList(); // Соединение с БД и получам закешированые данные из БД
         }
 
          
         //дествия при загрузке формы
         private void Catalog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        //поле дата грид
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
