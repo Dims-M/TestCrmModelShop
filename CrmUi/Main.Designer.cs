@@ -91,8 +91,9 @@
             // sellerAddToolStripMenuItem1
             // 
             this.sellerAddToolStripMenuItem1.Name = "sellerAddToolStripMenuItem1";
-            this.sellerAddToolStripMenuItem1.Size = new System.Drawing.Size(159, 26);
+            this.sellerAddToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.sellerAddToolStripMenuItem1.Text = "Добавить";
+            this.sellerAddToolStripMenuItem1.Click += new System.EventHandler(this.SellerAddToolStripMenuItem1_Click);
             // 
             // castomerToolStripMenuItem
             // 

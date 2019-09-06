@@ -13,6 +13,7 @@ namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
   //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
+ // 2 урок  12.08
     public partial class Main : Form
     {
         //Cоединение с базой данных
@@ -68,6 +69,14 @@ namespace CrmUi
                 db.SaveChanges(); //сохраняем в бд
             }
            // customerForm.Show();
+        }
+
+        //Кнопка добавления продовца.
+        private void SellerAddToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var sellerForm = new SellerForm();
+            sellerForm.Show();
+
         }
     }
 }
