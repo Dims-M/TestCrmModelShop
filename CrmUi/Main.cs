@@ -66,7 +66,7 @@ namespace CrmUi
             if (customerForm.ShowDialog() == DialogResult.OK)
             {
                 db.Customers.Add(customerForm.Customer); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
-                db.SaveChanges(); //сохраняем в бд
+             //   db.SaveChanges(); //сохраняем в бд
                 
             }
            // customerForm.Show();
@@ -79,7 +79,7 @@ namespace CrmUi
             if (form.ShowDialog() == DialogResult.OK)
             {
                 db.Sellers.Add(form.Seller); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
-                db.SaveChanges(); //сохраняем в бд
+              //  db.SaveChanges(); //сохраняем в бд
             }
             //form.Show();
 
@@ -87,7 +87,13 @@ namespace CrmUi
 
         private void Main_Load(object sender, EventArgs e)
         {
+           
+        }
 
+        //при закрытии но не доконца
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+              db.SaveChanges();
         }
     }
 }
