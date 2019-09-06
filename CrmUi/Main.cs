@@ -99,7 +99,7 @@ namespace CrmUi
         //при закрытии но не доконца
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-              db.SaveChanges();
+          //    db.SaveChanges();
         }
     }
 }

@@ -13,16 +13,16 @@ namespace CrmBl.Model
     public class Seller
     {
         
-       // public int Id { get; set; } //*
-        [Key]
+        public int Id { get; set; } //*
+         
         public int SellerId { get; set; }
 
         public string Name { get; set; }
 
-      //  public int ProductId { get; set; } //*
+        public int ProductId { get; set; } //*
 
-      //  public virtual Check Chek { get; set; } //*
-     //   public virtual Product Product { get; set; } //*
+        public virtual Check Chek { get; set; } //*
+        public virtual Product Product { get; set; } //*
 
         public virtual ICollection<Check> Cheks { get; set; }
 
