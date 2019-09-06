@@ -61,7 +61,13 @@ namespace CrmUi
         //кнопка добавления покупателей
         private void CustomerAddToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-
+            CustomerForm customerForm = new CustomerForm(); // Создаем форму.
+            if (customerForm.ShowDialog() == DialogResult.OK)
+            {
+                db.Customers.Add(customerForm.Customer); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
+                db.SaveChanges(); //сохраняем в бд
+            }
+           // customerForm.Show();
         }
     }
 }
