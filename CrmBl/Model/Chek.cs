@@ -12,7 +12,7 @@ namespace CrmBl.Model
     /// </summary>
     public class Check
     {
-        [Key]
+        
         public int Id { get; set; }
         public int CustomerID { get; set; }
 
@@ -21,7 +21,7 @@ namespace CrmBl.Model
         /// </summary>
         public virtual Customer Customer { get; set; }
 
-        public int SellerId { set; get; }
+        public int SellergId { set; get; }
 
         /// <summary>
         /// Связь с таблицой тродавца. Для создания всего обьекта со всеми свойствами
