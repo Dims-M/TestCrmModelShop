@@ -51,9 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201909061054376_AddCompanyMigration.cs" />
-    <Compile Include="Migrations\201909061054376_AddCompanyMigration.Designer.cs">
-      <DependentUpon>201909061054376_AddCompanyMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201909062147520_AddCompanyMigration.cs" />
+    <Compile Include="Migrations\201909062147520_AddCompanyMigration.designer.cs">
+      <DependentUpon>201909062147520_AddCompanyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Chek.cs" />
@@ -69,8 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909061054376_AddCompanyMigration.resx">
-      <DependentUpon>201909061054376_AddCompanyMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909062147520_AddCompanyMigration.resx">
+      <DependentUpon>201909062147520_AddCompanyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

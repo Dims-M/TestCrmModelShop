@@ -12,8 +12,14 @@ using CrmBl.Model;
 namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
-  //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
- // 2 урок  12.08
+    //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
+    // 2 урок  12.08
+    // миграциия
+    //get-help NuGet
+    //enable-migrations или -Force
+    //add-migration "AddCompanyMigration"
+    //update-database или update-database -Verbose
+
     public partial class Main : Form
     {
         //Cоединение с базой данных
