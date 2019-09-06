@@ -14,7 +14,7 @@ namespace CrmUi
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
     //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
     // 2 урок  12.08
-    // миграциия
+    // миграциия -Verbose
     //get-help NuGet
     //enable-migrations  -Force
     //add-migration "AddCompanyMigration"
