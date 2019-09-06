@@ -7,65 +7,65 @@
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.Checks",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        CustomerID = c.Int(nullable: false),
-                        SellerId = c.Int(nullable: false),
-                        Created = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Customers", t => t.CustomerID, cascadeDelete: true)
-                .ForeignKey("dbo.Sellers", t => t.SellerId, cascadeDelete: true)
-                .Index(t => t.CustomerID)
-                .Index(t => t.SellerId);
+            //CreateTable(
+            //    "dbo.Checks",
+            //    c => new
+            //        {
+            //            Id = c.Int(nullable: false, identity: true),
+            //            CustomerID = c.Int(nullable: false),
+            //            SellerId = c.Int(nullable: false),
+            //            Created = c.DateTime(nullable: false),
+            //        })
+            //    .PrimaryKey(t => t.Id)
+            //    .ForeignKey("dbo.Customers", t => t.CustomerID, cascadeDelete: true)
+            //    .ForeignKey("dbo.Sellers", t => t.SellerId, cascadeDelete: true)
+            //    .Index(t => t.CustomerID)
+            //    .Index(t => t.SellerId);
             
-            CreateTable(
-                "dbo.Customers",
-                c => new
-                    {
-                        CustomerId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.CustomerId);
+            //CreateTable(
+            //    "dbo.Customers",
+            //    c => new
+            //        {
+            //            CustomerId = c.Int(nullable: false, identity: true),
+            //            Name = c.String(),
+            //        })
+            //    .PrimaryKey(t => t.CustomerId);
             
-            CreateTable(
-                "dbo.Sellers",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        SellerId = c.Int(nullable: false),
-                        Name = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
+            //CreateTable(
+            //    "dbo.Sellers",
+            //    c => new
+            //        {
+            //            Id = c.Int(nullable: false, identity: true),
+            //            SellerId = c.Int(nullable: false),
+            //            Name = c.String(),
+            //        })
+            //    .PrimaryKey(t => t.Id);
             
-            CreateTable(
-                "dbo.Sells",
-                c => new
-                    {
-                        SellId = c.Int(nullable: false, identity: true),
-                        ChekId = c.Int(nullable: false),
-                        ProductId = c.Int(nullable: false),
-                        Check_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.SellId)
-                .ForeignKey("dbo.Checks", t => t.Check_Id)
-                .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
-                .Index(t => t.ProductId)
-                .Index(t => t.Check_Id);
+            //CreateTable(
+            //    "dbo.Sells",
+            //    c => new
+            //        {
+            //            SellId = c.Int(nullable: false, identity: true),
+            //            ChekId = c.Int(nullable: false),
+            //            ProductId = c.Int(nullable: false),
+            //            Check_Id = c.Int(),
+            //        })
+            //    .PrimaryKey(t => t.SellId)
+            //    .ForeignKey("dbo.Checks", t => t.Check_Id)
+            //    .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
+            //    .Index(t => t.ProductId)
+            //    .Index(t => t.Check_Id);
             
-            CreateTable(
-                "dbo.Products",
-                c => new
-                    {
-                        ProductId = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
-                        Count = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.ProductId);
+            //CreateTable(
+            //    "dbo.Products",
+            //    c => new
+            //        {
+            //            ProductId = c.Int(nullable: false, identity: true),
+            //            Name = c.String(),
+            //            Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+            //            Count = c.Int(nullable: false),
+            //        })
+            //    .PrimaryKey(t => t.ProductId);
             
         }
         
