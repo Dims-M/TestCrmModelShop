@@ -13,7 +13,7 @@ using System.Windows.Forms;
 namespace CrmUi
 {
     /// <summary>
-    /// Форма добавления покупателя клиента
+    /// Форма добавления продавца  
     /// </summary>
     public partial class SellerForm : Form
     {
@@ -52,7 +52,7 @@ namespace CrmUi
         //при закрузке формы
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-
+             
         }
     }
 }

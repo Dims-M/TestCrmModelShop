@@ -17,7 +17,7 @@ namespace CrmUi
     public partial class Main : Form
     {
         //Cоединение с базой данных
-        CrmContext db;  
+        CrmContext db;    
 
         public Main()
         {
@@ -67,15 +67,26 @@ namespace CrmUi
             {
                 db.Customers.Add(customerForm.Customer); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
                 db.SaveChanges(); //сохраняем в бд
+                
             }
            // customerForm.Show();
         }
 
-        //Кнопка добавления продовца.
+        //Кнопка добавления продавца.
         private void SellerAddToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var sellerForm = new SellerForm();
-            sellerForm.Show();
+            var form = new SellerForm();
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                db.Sellers.Add(form.Seller); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
+                db.SaveChanges(); //сохраняем в бд
+            }
+            //form.Show();
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
+        {
 
         }
     }

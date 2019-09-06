@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.sellerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -45,6 +48,10 @@
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
+            // sellerBindingSource
+            // 
+            this.sellerBindingSource.DataSource = typeof(CrmBl.Model.Seller);
+            // 
             // Catalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -55,6 +62,7 @@
             this.Text = "Catalog";
             this.Load += new System.EventHandler(this.Catalog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sellerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -62,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.BindingSource sellerBindingSource;
     }
 }

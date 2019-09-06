@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace CrmBl.Model
     /// </summary>
     public class Product
     {
+        [Key]
         public int ProductId { get; set; }
         public string Name { get; set; }
         public decimal Price { get; set; }
@@ -19,7 +21,7 @@ namespace CrmBl.Model
         /// <summary>
         /// виртуальное свойство для связи между таблицами
         /// </summary>
-        public virtual ICollection<Seller> Sells { get; set; }
+        public virtual ICollection<Seller> Selles { get; set; }
 
         /// <summary>
         /// Переопределенный тустринг. Возразает имя товара.

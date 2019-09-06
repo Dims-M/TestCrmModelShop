@@ -104,6 +104,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Catalog`1[].datasource" />
+    <None Include="Properties\DataSources\CrmBl.Migrations.AddCompanyMigration.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.Check.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.CrmContext.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.Customer.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.Product.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.Sell.datasource" />
+    <None Include="Properties\DataSources\CrmBl.Model.Seller.datasource" />
+    <None Include="Properties\DataSources\CrmUi.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\CrmUi.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\CustomerForm.datasource" />
+    <None Include="Properties\DataSources\Main.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SellerForm.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

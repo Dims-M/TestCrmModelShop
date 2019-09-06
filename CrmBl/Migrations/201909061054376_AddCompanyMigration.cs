@@ -62,7 +62,7 @@
                 .PrimaryKey(t => t.ProductId);
             
             CreateTable(
-                "dbo.Sells",
+                "dbo.Selles",
                 c => new
                     {
                         SellId = c.Int(nullable: false, identity: true),
@@ -80,21 +80,21 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.Sells", "ProductId", "dbo.Products");
-            DropForeignKey("dbo.Sells", "Check_Id", "dbo.Checks");
+            DropForeignKey("dbo.Selles", "ProductId", "dbo.Products");
+            DropForeignKey("dbo.Selles", "Check_Id", "dbo.Checks");
             DropForeignKey("dbo.Checks", "SellerId", "dbo.Sellers");
             DropForeignKey("dbo.Sellers", "ProductId", "dbo.Products");
             DropForeignKey("dbo.Checks", "Seller_Id", "dbo.Sellers");
             DropForeignKey("dbo.Sellers", "Chek_Id", "dbo.Checks");
             DropForeignKey("dbo.Checks", "CustomerID", "dbo.Customers");
-            DropIndex("dbo.Sells", new[] { "Check_Id" });
-            DropIndex("dbo.Sells", new[] { "ProductId" });
+            DropIndex("dbo.Selles", new[] { "Check_Id" });
+            DropIndex("dbo.Selles", new[] { "ProductId" });
             DropIndex("dbo.Sellers", new[] { "Chek_Id" });
             DropIndex("dbo.Sellers", new[] { "ProductId" });
             DropIndex("dbo.Checks", new[] { "Seller_Id" });
             DropIndex("dbo.Checks", new[] { "SellerId" });
             DropIndex("dbo.Checks", new[] { "CustomerID" });
-            DropTable("dbo.Sells");
+            DropTable("dbo.Selles");
             DropTable("dbo.Products");
             DropTable("dbo.Sellers");
             DropTable("dbo.Customers");
