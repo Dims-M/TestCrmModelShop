@@ -51,5 +51,17 @@ namespace CrmUi
             var catalogCheck = new Catalog<Check>(db.Checks); //Создание подключения к бд
             catalogCheck.Show();
         }
+
+        //Кнопка добавления Товаров
+        private void ProductAddToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //кнопка добавления покупателей
+        private void CustomerAddToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

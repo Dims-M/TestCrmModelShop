@@ -16,7 +16,10 @@ namespace CrmUi
     /// </summary>
     public partial class CustomerForm : Form
     {
-        //Обьект для добавления чезел этот обьект нового покупателя в Бд
+        
+        /// <summary>
+        /// Обьект для добавления человека этот обьект нового покупателя в Бд
+        /// </summary>
         Customer Customer { get; set; }
 
         public CustomerForm()
@@ -29,7 +32,7 @@ namespace CrmUi
         {
             Customer = new Customer()
             {
-                Name = textBox1.Text
+                Name = textBox1.Text //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
             };
          //  DialogResult
         }
@@ -42,6 +45,12 @@ namespace CrmUi
         private void Button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        //при закрузке формы
+        private void CustomerForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
