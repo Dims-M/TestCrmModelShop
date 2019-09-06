@@ -14,7 +14,7 @@ namespace CrmBl.Model
     {
         
        // public int Id { get; set; } //*
-         
+        [Key]
         public int SellerId { get; set; }
 
         public string Name { get; set; }
