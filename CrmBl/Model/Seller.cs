@@ -12,9 +12,11 @@ namespace CrmBl.Model
     /// </summary>
     public class Seller
     {
-        public int Id { get; set; } //*
         
-      //  public int SellerId { get; set; }
+       // public int Id { get; set; } //*
+        [Key]
+        public int SellerId { get; set; }
+
         public string Name { get; set; }
 
       //  public int ProductId { get; set; } //*

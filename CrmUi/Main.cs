@@ -16,7 +16,7 @@ namespace CrmUi
     // 2 урок  12.08
     // миграциия
     //get-help NuGet
-    //enable-migrations или -Force
+    //enable-migrations  -Force
     //add-migration "AddCompanyMigration"
     //update-database или update-database -Verbose
 
