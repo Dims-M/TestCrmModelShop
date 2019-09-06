@@ -13,7 +13,7 @@ namespace CrmBl.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201909061054376_AddCompanyMigration"; }
+            get { return "201909062238534_AddCompanyMigration"; }
         }
         
         string IMigrationMetadata.Source

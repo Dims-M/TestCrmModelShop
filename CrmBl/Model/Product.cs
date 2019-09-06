@@ -21,7 +21,7 @@ namespace CrmBl.Model
         /// <summary>
         /// виртуальное свойство для связи между таблицами
         /// </summary>
-        public virtual ICollection<Seller> Selles { get; set; }
+      //  public virtual ICollection<Seller> Selles { get; set; }
 
         /// <summary>
         /// Переопределенный тустринг. Возразает имя товара.
