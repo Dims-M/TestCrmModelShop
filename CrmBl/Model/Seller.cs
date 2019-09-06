@@ -19,10 +19,10 @@ namespace CrmBl.Model
 
         public string Name { get; set; }
 
-        public int ProductId { get; set; } //*
+     //  public int ProductId { get; set; } //*
 
-        public virtual Check Chek { get; set; } //*
-        public virtual Product Product { get; set; } //*
+      //  public virtual Check Chek { get; set; } //*
+      //  public virtual Product Product { get; set; } //*
 
         public virtual ICollection<Check> Cheks { get; set; }
 
