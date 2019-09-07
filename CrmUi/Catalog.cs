@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrmBl.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -33,6 +34,30 @@ namespace CrmUi
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        //Кнопка Выход с формы
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //Кнопка добавить на форме коталого
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Проверка на входной тип
+            if (typeof(T) == typeof(Product))
+            {
+
+            }
+            else if (typeof(T) == typeof(Seller))
+            {
+
+            }
+
+            else if (typeof(T) == typeof(Customer))
+            {
+            }
         }
     }
 }
