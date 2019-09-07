@@ -13,15 +13,15 @@ namespace CrmBl.Model
     public class Check
     {
         
-        public int Id { get; set; }
-        public int CustomerID { get; set; }
+        public int CheckId { get; set; }
+        public int CustomerId { get; set; }
 
         /// <summary>
         /// Виртуальное Свойство для с внешним ключом. для связи между таблицами
         /// </summary>
         public virtual Customer Customer { get; set; }
 
-        public int SellergId { set; get; }
+        public int SellerId { set; get; }
 
         /// <summary>
         /// Связь с таблицой тродавца. Для создания всего обьекта со всеми свойствами
@@ -40,7 +40,7 @@ namespace CrmBl.Model
 
         public override string ToString()
         {
-            return $"№{CustomerID} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
+            return $"№{CustomerId} от {Created.ToString("dd.MM.yy hh:mm:ss")}";
         }
 
     }

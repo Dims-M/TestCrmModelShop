@@ -17,7 +17,7 @@ namespace CrmUi
     // миграциия -Verbose
     //get-help NuGet
     //enable-migrations  -Force
-    //add-migration "AddCompanyMigration"
+    //add-migration "AddCompanyMigration"  -Force
     //update-database -Force или update-database -Verbose
 
     public partial class Main : Form
