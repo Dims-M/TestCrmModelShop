@@ -26,7 +26,7 @@ namespace CrmUi
         //дествия при загрузке формы
         private void Catalog_Load(object sender, EventArgs e)
         {
-
+            dataGridView.Refresh(); // перерисовка всех элементов 
         }
 
         //поле дата грид

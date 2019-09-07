@@ -62,7 +62,13 @@ namespace CrmUi
         //Кнопка добавления Товаров
         private void ProductAddToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var customerForm = new ProductForm(); // Создаем форму.
+            if (customerForm.ShowDialog() == DialogResult.OK)
+            {
+                db.Products.Add(customerForm.Product); // Заполненый обьект(имя) полученный из формы  CustomerForm. Записываем в БД
+                db.SaveChanges(); //сохраняем в бд
 
+            }
         }
 
         //кнопка добавления покупателей
