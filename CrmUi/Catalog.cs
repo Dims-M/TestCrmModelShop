@@ -15,12 +15,15 @@ namespace CrmUi
     public partial class Catalog<T> : Form
          where T : class
     {
-        CrmContext db;
+        CrmContext db; //для свзи с БД
+        DbSet<T> set;  // контекст для работы и подключение к бд 
+
         ///
         public Catalog(DbSet<T> set, CrmContext db) // в качестве параметра указываем подключение к дазе данных
         {
             InitializeComponent();
             this.db = db; // в теущую переменую присваиваем входящую экземпляр db
+            this.set = set;
             set.Load(); // закрузка данных из бд. Ленивая подгузка
             dataGridView.DataSource = set.Local.ToBindingList(); // Соединение с БД и получам закешированые данные из БД
         }
@@ -62,10 +65,21 @@ namespace CrmUi
             }
         }
 
-        //кнопка изменить
+        //кнопка изменить, редактирование
         private void Button3_Click(object sender, EventArgs e)
         {
             var id = dataGridView.SelectedRows[0].Cells[0].Value; // получам выбранный в таблице id строки
+
+            if (typeof(T) == typeof(Product)) // если открывеется форма для работы с товарами(Product)
+            {
+               var product =  set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к ужному классу r
+                if (product != null)
+                {
+                    var form = new ProductForm(product);
+                    form.Show();
+                }
+
+            }
         }
     }
 }

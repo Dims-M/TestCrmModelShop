@@ -13,7 +13,7 @@ namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
     //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
-    // 2 урок  40 minute
+    // 2 урок  1.07 minute
     // миграциия -Verbose
     //get-help NuGet
     //enable-migrations  -Force

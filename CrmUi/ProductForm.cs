@@ -28,7 +28,16 @@ namespace CrmUi
             InitializeComponent();
         }
 
-       
+        //Конструктор
+        public ProductForm(Product product): this() // вызываем  базовый конструктор.
+        {
+            // InitializeComponent(); // отправили в базовый класс
+            Product = product; // получаем обьет по id и дергаем из него нужные данные
+            textBox1.Text = product.Name;
+            numericUpDown1.Value = product.Price;
+            numericUpDown2.Value = product.Count;
+        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
             //Проверка имени на пустоту
@@ -44,7 +53,8 @@ namespace CrmUi
                 {
                     Name = textBox1.Text, //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
                     Price = numericUpDown1.Value,
-                    Count = (int)numericUpDown2.Value
+                   //Count = (int)numericUpDown2.Value
+                    Count = Convert.ToInt32( numericUpDown2.Value)
                 };
 
             //  DialogResult
