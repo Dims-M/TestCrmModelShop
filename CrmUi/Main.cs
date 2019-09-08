@@ -34,28 +34,28 @@ namespace CrmUi
         //При нажатии на кнопку товар 
         private   void ProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cataloProduct = new Catalog<Product>(db.Products);
+            var cataloProduct = new Catalog<Product>(db.Products,db);
             cataloProduct.Show();
         }
 
         //Клин или нажатие на кнопку продавец
         private void SellerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var cataloSeller = new Catalog<Seller>(db.Sellers); //Создание подключения к бд
+            var cataloSeller = new Catalog<Seller>(db.Sellers,db); //Создание подключения к бд
             cataloSeller.Show();
         }
 
         //Кнопка покупатель
         private void CastomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var catalogCustomer = new Catalog<Customer>(db.Customers); //Создание подключения к бд
+            var catalogCustomer = new Catalog<Customer>(db.Customers,db); //Создание подключения к бд
             catalogCustomer.Show();
         }
 
         //кнопка чек
         private void Check_Click(object sender, EventArgs e)
         {
-            var catalogCheck = new Catalog<Check>(db.Checks); //Создание подключения к бд
+            var catalogCheck = new Catalog<Check>(db.Checks,db); //Создание подключения к бд
             catalogCheck.Show();
         }
 

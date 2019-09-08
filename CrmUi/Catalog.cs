@@ -15,11 +15,13 @@ namespace CrmUi
     public partial class Catalog<T> : Form
          where T : class
     {
-        
+        CrmContext db;
         ///
-        public Catalog(DbSet<T> set)
+        public Catalog(DbSet<T> set, CrmContext db) // в качестве параметра указываем подключение к дазе данных
         {
             InitializeComponent();
+            this.db = db; // в теущую переменую присваиваем входящую экземпляр db
+            set.Load(); // закрузка данных из бд. Ленивая подгузка
             dataGridView.DataSource = set.Local.ToBindingList(); // Соединение с БД и получам закешированые данные из БД
         }
 
@@ -58,6 +60,12 @@ namespace CrmUi
             else if (typeof(T) == typeof(Customer))
             {
             }
+        }
+
+        //кнопка изменить
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            var id = dataGridView.SelectedRows[0].Cells[0].Value; // получам выбранный в таблице id строки
         }
     }
 }
