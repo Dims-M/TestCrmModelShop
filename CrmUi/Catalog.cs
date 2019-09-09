@@ -23,7 +23,7 @@ namespace CrmUi
         {
             InitializeComponent();
             this.db = db; // в теущую переменую присваиваем входящую экземпляр db
-            this.set = set;
+            this.set = set; // работа с БДЫ
             set.Load(); // закрузка данных из бд. Ленивая подгузка
             dataGridView.DataSource = set.Local.ToBindingList(); // Соединение с БД и получам закешированые данные из БД
         }
@@ -72,14 +72,27 @@ namespace CrmUi
 
             if (typeof(T) == typeof(Product)) // если открывеется форма для работы с товарами(Product)
             {
-               var product =  set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к ужному классу r
+               var product =  set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
+
                 if (product != null)
                 {
-                    var form = new ProductForm(product);
-                    form.Show();
+                    var form = new ProductForm(product); //cоздаем форму
+                    if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
+                    {
+                        //db.Products.Add(form.Product); //не добавить а обновить!!
+                        product = form.Product;
+                        db.SaveChanges();
+                    }
+                   // form.Show(); // показываем форму
                 }
 
             }
+        }
+
+        //Кнопка удалить
+        private void Button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
