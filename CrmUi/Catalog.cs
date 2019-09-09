@@ -77,6 +77,7 @@ namespace CrmUi
                 if (product != null)
                 {
                     var form = new ProductForm(product); //cоздаем форму
+
                     if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
                     {
                         //db.Products.Add(form.Product); //не добавить а обновить!!

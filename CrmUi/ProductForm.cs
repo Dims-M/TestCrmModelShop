@@ -49,13 +49,14 @@ namespace CrmUi
 
            else
             {
-                Product = new Product()
-                {
-                    Name = textBox1.Text, //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
-                    Price = numericUpDown1.Value,
+                var p = Product ?? new Product(); // если обьект Product пустой то моздается новый обьект
+                //  Product = new Product()
+                //  {
+                p.Name = textBox1.Text; //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
+                    p.Price = numericUpDown1.Value;
                    //Count = (int)numericUpDown2.Value
-                    Count = Convert.ToInt32( numericUpDown2.Value)
-                };
+                    p.Count = Convert.ToInt32(numericUpDown2.Value);
+              //  };
 
             //  DialogResult
             label2.Visible = true;
