@@ -80,13 +80,49 @@ namespace CrmUi
 
                     if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
                     {
-                        //db.Products.Add(form.Product); //не добавить а обновить!!
+                        //db.Products.Add(item.Product); //не добавить а обновить!!
                         product = form.Product;
                         db.SaveChanges();
                     }
-                   // form.Show(); // показываем форму
+                   // item.Show(); // показываем форму
                 }
 
+            }
+
+            else if (typeof(T) == typeof(Seller))
+            {
+                var seller = set.Find(id) as Seller; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
+
+                if (seller != null)
+                {
+                    var form = new SellerForm(seller); //cоздаем форму
+
+                    if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
+                    {
+                        //db.Products.Add(item.Product); //не добавить а обновить!!
+                        seller = form.Seller;
+                        db.SaveChanges();
+                    }
+                   
+                }
+            }
+
+            else if (typeof(T) == typeof(Product))
+            {
+                var product = set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
+
+                if (product != null)
+                {
+                    var form = new ProductForm(product); //cоздаем форму
+
+                    if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
+                    {
+                        //db.Products.Add(item.Product); //не добавить а обновить!!
+                        product = form.Product;
+                        db.SaveChanges();
+                    }
+
+                }
             }
         }
 
@@ -95,5 +131,19 @@ namespace CrmUi
         {
 
         }
+
+        private void Update(int id, Form form)
+        {
+                    //var form = new ProductForm(item ); //cоздаем форму
+                    //if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
+                    //{
+                 
+                    //     item = form.Product;
+                    //     db.SaveChanges();
+                    //     dataGridView.Update();
+                    //}
+                   
+                }
+        
     }
 }
