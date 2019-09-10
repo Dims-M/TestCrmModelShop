@@ -31,6 +31,7 @@ namespace CrmUi
         public SellerForm(Seller seller): this() // используем базовый конструктор
         {
             Seller = seller;
+            textBox1.Text = seller.Name;
         }
 
         private void Button1_Click(object sender, EventArgs e)

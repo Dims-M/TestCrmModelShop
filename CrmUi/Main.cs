@@ -20,6 +20,10 @@ namespace CrmUi
     //add-migration "AddCompanyMigration"  -Force
     //update-database -Force или update-database -Verbose
 
+        // ***
+        //Сделать редактирование таблиц при двойном клике
+
+        //***
     public partial class Main : Form
     {
         //Cоединение с базой данных

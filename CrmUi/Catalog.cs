@@ -22,8 +22,8 @@ namespace CrmUi
         public Catalog(DbSet<T> set, CrmContext db) // в качестве параметра указываем подключение к дазе данных
         {
             InitializeComponent();
-            this.db = db; // в теущую переменую присваиваем входящую экземпляр db
-            this.set = set; // работа с БДЫ
+            this.db = db; // в теущую переменую присваиваем входящую экземпляр db работа с БДЫ
+            this.set = set; //  контекст..кэш данных
             set.Load(); // закрузка данных из бд. Ленивая подгузка
             dataGridView.DataSource = set.Local.ToBindingList(); // Соединение с БД и получам закешированые данные из БД
         }
@@ -72,7 +72,7 @@ namespace CrmUi
 
             if (typeof(T) == typeof(Product)) // если открывеется форма для работы с товарами(Product)
             {
-               var product =  set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
+                var product = set.Find(id) as Product; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
 
                 if (product != null)
                 {
@@ -84,7 +84,7 @@ namespace CrmUi
                         product = form.Product;
                         db.SaveChanges();
                     }
-                   // item.Show(); // показываем форму
+                    // item.Show(); // показываем форму
                 }
 
             }
@@ -103,7 +103,7 @@ namespace CrmUi
                         seller = form.Seller;
                         db.SaveChanges();
                     }
-                   
+
                 }
             }
 
@@ -123,8 +123,27 @@ namespace CrmUi
                     }
 
                 }
+
             }
-        }
+
+            else if (typeof(T) == typeof(Customer))
+            {
+                var product = set.Find(id) as Customer; //  Находит сущность с заданными значениями первичного ключа. Пприводим к нужному классу c
+
+                if (product != null)
+                {
+                    var form = new CustomerForm(product); //cоздаем форму
+
+                    if (form.ShowDialog() == DialogResult.OK) // если на форме нажата кнопка ОК
+                    {
+                        //db.Products.Add(item.Product); //не добавить а обновить!!
+                        product = form.Customer;
+                        db.SaveChanges();
+                    }
+
+                }
+
+            } }
 
         //Кнопка удалить
         private void Button4_Click(object sender, EventArgs e)

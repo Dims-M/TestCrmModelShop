@@ -28,13 +28,18 @@ namespace CrmUi
             InitializeComponent();
         }
 
-       
+        public CustomerForm(Customer customer): this() // запускае базовый конструктор
+        {
+            Customer = customer;
+            textBox1.Text = customer.Name;
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
-            Customer = new Customer()
-            {
-                Name = textBox1.Text //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
-            };
+            var s = Customer ?? new Customer(); // если обьект пустой. То создаем новый
+                                                //Customer = new Customer()
+                                                //{
+            s.Name = textBox1.Text; //В новь созданный класс. Добавляем имя клиента. И оно уходит в Бд
+            //};
             
             //  DialogResult
             label2.Visible = true;
