@@ -11,5 +11,7 @@ namespace CrmBl.Model
     /// </summary>
    public class Cart
     {
+        //Товар в корзине 1:33:30
+        public Customer Customer { get; set; }
     }
 }
