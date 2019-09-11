@@ -13,5 +13,8 @@ namespace CrmBl.Model
     {
         //Товар в корзине 1:33:30
         public Customer Customer { get; set; }
+
+
+
     }
 }
