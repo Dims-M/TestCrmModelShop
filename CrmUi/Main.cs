@@ -13,7 +13,9 @@ namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
     //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
-    // 2 урок  1.07 minute
+    // 2 урок  1.43 minute
+    //просмотреть курс по структурам данных
+
     // миграциия -Verbose
     //get-help NuGet
     //enable-migrations  -Force

@@ -31,5 +31,24 @@ namespace CrmBl.Model
         {
             return Name;
         }
+
+        /// <summary>
+        /// Переопределенный метод GetHashCode который возращает id продукта
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return ProductId;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if(obj is Product product)
+            {
+                return ProductId.Equals(product.ProductId);
+            }
+
+            return false;
+        }
     }
 }
