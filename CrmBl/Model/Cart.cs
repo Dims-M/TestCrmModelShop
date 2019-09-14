@@ -26,6 +26,7 @@ namespace CrmBl.Model
         public Cart(Customer customer)
         {
             Customer = customer; //В текуще свойство присваиваем полученное свойство
+            Products = new Dictionary<Product, int>(); // инициализирууем
         }
 
         /// <summary>
@@ -59,6 +60,21 @@ namespace CrmBl.Model
                     //https://docs.microsoft.com/ru-ru/dotnet/csharp/language-reference/keywords/yield?f1url=https%3A%2F%2Fmsdn.microsoft.com%2Fquery%2Fdev15.query%3FappId%3DDev15IDEF1%26l%3DRU-RU%26k%3Dk(yield_CSharpKeyword)%3Bk(TargetFrameworkMoniker-.NETFramework%2CVersion%3Dv4.6.1)%3Bk(DevLang-csharp)%26rd%3Dtrue
                 }
             }
+        }
+
+        /// <summary>
+        /// Метод для рабты с юнит тестами. 
+        /// </summary>
+        /// <returns></returns>
+        public List<Product> GetAll()
+        {
+            var result = new List<Product>();
+
+            foreach(Product i in this)
+            {
+                result.Add(i);
+            };
+            return result;
         }
     }
 }
