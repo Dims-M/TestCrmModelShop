@@ -19,11 +19,13 @@ namespace CrmB1.Model.Tests
             //arrange //ЭТО бьявления. Где мы создаем входные и итоговые данные
             var customer = new Customer()
             {
+                CustomerId = 1,
                 Name = "testuser",
             };
 
             var product1 = new Product()
             {
+                ProductId =1,
                 Name ="pr1",
                 Price = 100,
                 Count =10
@@ -31,6 +33,7 @@ namespace CrmB1.Model.Tests
 
             var product2 = new Product()
             {
+                ProductId = 2,
                 Name = "pr2",
                 Price = 200,
                 Count = 20
