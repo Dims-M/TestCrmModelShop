@@ -13,7 +13,7 @@ namespace CrmUi
 {
     // https://www.youtube.com/watch?v=XHuUN1u8ZPE
     //  https://www.youtube.com/watch?v=XHuUN1u8ZPE&t=5184s
-    // 2 урок  1.43 minute
+    //3 урок  25 minute
     //просмотреть курс по структурам данных
 
     // миграциия -Verbose
@@ -25,6 +25,7 @@ namespace CrmUi
         // ***
         //Сделать редактирование таблиц при двойном клике
 
+        //Подумать как присобачить к апи
         //***
     public partial class Main : Form
     {
