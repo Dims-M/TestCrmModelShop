@@ -22,6 +22,7 @@ namespace CrmBl.Model
         public int Number { get; set; }
         public int MaxQueueLenght { get; set; } //Максимальная длина очереди
         public int ExitCustomer { get; set; } //Счетчик длины очереди. Если больше маскималки. Продажа не происходит
+        public bool IsModel { get; set; } //режим выбора работы. Если тру. То не сохраняется в БД
 
         /// <summary>
         /// Очередь покупателей. В качестве параметров использем корзины покупок. Так как там указан контретный покупатель!!!
@@ -33,6 +34,7 @@ namespace CrmBl.Model
         {
             Number = number;
             Seller = seller;
+            IsModel = true;
             Queue = new Queue<Cart>(); // иницализируем очередь
         }
 
@@ -50,7 +52,8 @@ namespace CrmBl.Model
 
             else
             {
-                ExitCustomer++; // добавляем в интовый "список" непопавщик в очередь
+                //для статистики
+                ExitCustomer++; // добавляем в интовый "список" не попавших в очередь
             }
 
         }
@@ -60,7 +63,20 @@ namespace CrmBl.Model
         /// </summary>
         public void Dequeue()
         {
+            var card = Queue.Dequeue();
 
+            if (card!=null)
+            {
+                var check = new Check() // создаем экземпляр чека.
+                {
+                    CheckId = Seller.SellerId, //приваеваем id 
+                    Seller = Seller, // присваеыаем текущего продавца
+                    Customer = card.Customer, // присваеваем текущего покупателя
+                    CustomerId = card.Customer.CustomerId,
+                    Created = DateTime.Now
+                };
+
+            }
         }
 
     }
