@@ -9,8 +9,10 @@ namespace CrmBl.Model
     /// <summary>
     /// Класс опысывает кассу.    
     /// </summary>
-    class CashDesk
+  public  class CashDesk
     {
+        //Обьект для работв с бд
+        CrmContext db = new CrmContext();
          
         /// <summary>
         /// Продавец. Кто осуществляет текущую продажу
@@ -61,11 +63,13 @@ namespace CrmBl.Model
         /// <summary>
         /// Извлекаем покупателя из очереди
         /// </summary>
-        public void Dequeue()
+        public decimal Dequeue()
         {
+            //Сумма продажи
+            decimal summ = 0;
             var card = Queue.Dequeue();
 
-            if (card!=null)
+            if (card != null)
             {
                 var check = new Check() // создаем экземпляр чека.
                 {
@@ -73,10 +77,67 @@ namespace CrmBl.Model
                     Seller = Seller, // присваеыаем текущего продавца
                     Customer = card.Customer, // присваеваем текущего покупателя
                     CustomerId = card.Customer.CustomerId,
-                    Created = DateTime.Now
+                    Created = DateTime.Now //дата создание чека
                 };
 
+                //проверка на запись в бд
+                if (!IsModel)
+                {
+                    db.Checks.Add(check); // добавляем новую запись в бд
+                    db.SaveChanges(); // cохраняем в бд
+                }
+
+                else
+                {
+                    check.CheckId = 0;
+                }
+
+                //вспомогательный список продаж
+                var sells = new List<Sell>();
+
+
+                //перебор записи продаж
+                foreach (Product product in card)
+                {
+                    //Прооверка на наличие на складк
+                    if (product.Count > 0)
+                    {
+
+
+                        //создаем обьект продажи
+                        var sell = new Sell()
+                        {
+                            ChekId = check.CheckId, // Примваевам переменым данные. 
+                            Check = check, // чеки продаж
+                            ProductId = product.ProductId, // id продуктов
+                            Product = product
+                        };
+
+                        //уменьшать количество товара
+                        product.Count--;
+                        summ = product.Price; // запысываем сумму продажи
+                        sells.Add(sell); //записывакм текущую продажу в лист 
+
+                        //Проверка на текущий статус 
+                        if (!IsModel)
+                        {
+                            db.Sells.Add(sell); // добавляем в базу данных
+                        }
+
+                    }
+                    else
+                    {
+                        //Товара нет в наличии
+                    }
+                } //конец цикла
+
+                if (!IsModel)
+                {
+                    db.SaveChanges(); // сохранение в бд
+                }
             }
+
+            return summ;
         }
 
     }
