@@ -2,3 +2,26 @@
 
 Программирование. Практика C#. Компьютерное моделирование и CRM система. День 1.17
 https://www.youtube.com/watch?v=NsMUdsiHrw8&list=PLIIXgDT0bKw4M1_5JX0LRHdjQXSR0Upfw&index=3
+
+
+Как создать генератор рандомных слов?
+http://www.cyberforum.ru/csharp-beginners/thread1981613.html
+
+public static void Shuffle(string[] a)
+        {
+            var rand = new Random();
+            for(int i = a.Length - 1; i > 0; i--)
+            {
+                int j = rand.Next(0, i + 1);
+                string tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
+            }
+        }
+private void button1_Click(object sender, EventArgs e)
+        {
+            string[] words = {"Квартира", "Будильник", "Работа", "День"};
+           Shuffle(words);
+           tbKeys.Text = string.Join(";", words.Take(n)); //где n - кол-во необходимых эл-тов
+ 
+        }
